@@ -1,0 +1,42 @@
+{
+  "info": {
+    "name": "CardTrack Price API",
+    "description": "Pokémon card prices, English and Japanese, raw and graded. Get a free key at https://cardtrack.com/developers and set it as the `apiKey` collection variable. Raw prices come from CardTrack's own completed sales, or TCGplayer's market price where we hold none; `value.source` says which. Show \"Prices by CardTrack\" (the response's `attribution`) on the Free, Developer and Pro plans.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": { "type": "bearer", "bearer": [{ "key": "token", "value": "{{apiKey}}", "type": "string" }] },
+  "variable": [
+    { "key": "baseUrl", "value": "https://cardtrack.com" },
+    { "key": "apiKey", "value": "ct_live_your_key_here" }
+  ],
+  "item": [
+    {
+      "name": "Search cards (English)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/cards?q=charizard&limit=10&sort=value",
+          "host": ["{{baseUrl}}"], "path": ["api", "v1", "cards"],
+          "query": [
+            { "key": "q", "value": "charizard", "description": "Card name or set name" },
+            { "key": "limit", "value": "10", "description": "1-100, default 25. No pagination; `total` gives the full count." },
+            { "key": "sort", "value": "value", "description": "value | psa10 | name" }
+          ]
+        },
+        "description": "Case-insensitive match on card or set name. English cards only."
+      }
+    },
+    {
+      "name": "Get one card (English or Japanese)",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/v1/cards/base1-4", "host": ["{{baseUrl}}"], "path": ["api", "v1", "cards", "base1-4"] },
+        "description": "By id: `base1-4` (English) or e.g. `m5_ja-114` (Japanese)."
+      }
+    },
+    {
+      "name": "OpenAPI spec (no key)",
+      "request": { "auth": { "type": "noauth" }, "method": "GET", "url": { "raw": "{{baseUrl}}/api/v1/openapi.json", "host": ["{{baseUrl}}"], "path": ["api", "v1", "openapi.json"] } }
+    }
+  ]
+}

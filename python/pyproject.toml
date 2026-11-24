@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cardtrack"
+version = "1.0.0"
+description = "Pokémon card price API client: English and Japanese cards, raw and graded, from CardTrack."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [{ name = "CardTrack" }]
+keywords = ["pokemon", "pokemon-tcg", "pokemon-cards", "card-prices", "tcg", "psa", "price-api", "cardtrack"]
+dependencies = []
+
+[project.urls]
+Homepage = "https://cardtrack.com/developers"
+Documentation = "https://cardtrack.com/developers"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cardtrack"]
