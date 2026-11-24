@@ -16,6 +16,8 @@ dependencies = []
 [project.urls]
 Homepage = "https://cardtrack.com/developers"
 Documentation = "https://cardtrack.com/developers"
+Source = "https://github.com/csprocessing/cardtrack-clients"
+Issues = "https://github.com/csprocessing/cardtrack-clients/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/cardtrack"]

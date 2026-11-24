@@ -2,16 +2,49 @@
   "name": "cardtrack",
   "version": "1.0.0",
   "description": "Pokémon card price API client: English and Japanese cards, raw and graded, from CardTrack.",
-  "keywords": ["pokemon", "pokemon-tcg", "pokemon-cards", "card-prices", "tcg", "psa", "price-api", "cardtrack"],
+  "keywords": [
+    "pokemon",
+    "pokemon-tcg",
+    "pokemon-cards",
+    "card-prices",
+    "tcg",
+    "psa",
+    "price-api",
+    "cardtrack"
+  ],
   "homepage": "https://cardtrack.com/developers",
   "license": "MIT",
   "author": "CardTrack",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "exports": { ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" } },
-  "files": ["dist", "README.md", "LICENSE"],
-  "engines": { "node": ">=18" },
-  "scripts": { "build": "tsc", "test": "tsc && node --test test/*.test.mjs" },
-  "devDependencies": { "typescript": "^5.6.3" }
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node --test test/*.test.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csprocessing/cardtrack-clients.git",
+    "directory": "js"
+  },
+  "bugs": {
+    "url": "https://github.com/csprocessing/cardtrack-clients/issues"
+  }
 }
